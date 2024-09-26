@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meipaly</title>
+    <!-- link logo -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <!-- google-font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Slick css -->
+    <link rel="stylesheet" href="./lib/slick/slick.css" />
+
+    <!-- Slick CSS Theme -->
+    <link rel="stylesheet" href="./lib/slick/slick-theme.css" />
+
+    <!-- link css -->
+    <link rel="stylesheet" href="css/meipaly.css" />
+  </head>
+  <body>
+    <!-- header -->
+    <section id="header">
+      <div class="container">
+        <header>
+          <div class="header-logo">
+            <i class="fa-brands fa-atlassian"></i> <span>meipaly </span>
+          </div>
+          <nav class="header-nav">
+            <ul>
+              <li><a class="active" href="">HOME</a></li>
+              <li><a href="">SERVICE</a></li>
+              <li><a href="">SHOWCASE</a></li>
+              <li><a href="">BLOG</a></li>
+              <li><a href="">ABOUT US</a></li>
+              <li><a href="">CONTACT</a></li>
+            </ul>
+          </nav>
+        </header>
+      </div>
+    </section>
+    <!-- banner -->
+    <section id="banner">
+      <div class="banner-content">
+        <p class="banner-desc">WELCOME TO MEIPALY AGENCY</p>
+        <h1 class="banner-title">SMART WEB DESIGN AGENCY</h1>
+        <button class="banner-btn">Read More</button>
+        <i class="fa-solid fa-chevron-down banner-icon"></i>
+      </div>
+    </section>
+
+    <!-- Carousel -->
+    <section id="carousel">
+      <div class="container">
+        <div class="carousel-content">
+          <div class="carousel-sub-title">SERVICES WE ARE OFFERING</div>
+          <h2 class="carousel-title">
+            WE DESIGN DIGITAL PRODUCTS THAT HELP GROW BUSINESS
+          </h2>
+          <p class="carousel-desc">
+            We are committed to providing our customers with exceptional service
+            while offering our employees the best training.
+          </p>
+            </div>
+            <div class="slider-content">
+                <i class="fa-solid fa-dice-d6"></i>
+                <p>App mobile development</p>
+            </div>
+            <div class="slider-content">
+              <div class="carousel-slider-item">
+                <i class="fa-solid fa-dice-d6"></i>
+                <p>App mobile development</p>
+              </div>
+            </div>
+            <div class="slider-content">
+              <div class="carousel-slider-item">
+                <i class="fa-solid fa-dice-d6"></i>
+                <p>App mobile development</p>
+              </div>
+            </div>
+            <div class="slider-content">
+              <div class="carousel-slider-item">
+                <i class="fa-solid fa-dice-d6"></i>
+                <p>App mobile development</p>
+              </div>
+            </div>
+            <div class="slider-content">
+              <div class="carousel-slider-item">
+                <i class="fa-solid fa-dice-d6"></i>
+                <p>App mobile development</p>
+              </div>
+            </div>
+            <div class="slider-content">
+              <div class="carousel-slider-item">
+                <i class="fa-solid fa-dice-d6"></i>
+                <p>App mobile development</p>
+              </div>
+            </div>
+            <div class="slider-content">
+              <div class="carousel-slider-item">
+                <i class="fa-solid fa-dice-d6"></i>
+                <p>App mobile development</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JQuery -->
+    <script src="./js/jquery-1.11.0.min.js"></script>
+    <!-- Slick JS -->
+    <script src="./lib/slick/slick.min.js"></script>
+
+    <script>
+      $(".carousel-slider").slick({
+        //Chạy vòng tròn
+        infinite: true,
+        //số lượng item hiển thị
+        slidesToShow: 5,
+        //số lượng item thay đổi  khi scroll
+        slidesToScroll: 2,
+        //Ẩn hiện mũi tên next or prev item
+        arrows: true,
+        //Tự động chuyển slider
+        autoplay: true,
+        //Thời gian chuyển slider item (đơn vị ms, 1s = 1000ms)
+        autoplaySpeed: 2000,
+      });
+    </script>
+  </body>
+</html>

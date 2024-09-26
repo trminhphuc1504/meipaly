@@ -1,0 +1,254 @@
+/* CSS External */
+
+/* Áp dụng tất cả các thẻ trong HTML */
+/* Thường sử dụng để reset CSS (loại bỏ những thuộc mặc định của trình duyệt) */
+* {
+    /* margin: 0; */
+}
+
+html {
+    font-size: 10px;
+}
+
+/* Selector Elemnt */
+h2 {
+    /* chứa thuộc tính CSS */
+    background-color: green;
+    color: pink;
+    font-size: 40px;
+    font-weight: 800;
+}
+
+/* Selector Elemnt */
+h3 {
+    background-color: aqua;
+    color: blue;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+/* Selector class */
+.bg-yellow {
+    background-color: yellow;
+}
+
+.bg-green {
+    background-color: green;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Chỉ áp dụng cho thẻ có cả 2 class demo và demo1 */
+.demo2.demo.demo1 {
+    color: red;
+}
+
+/* Selector Id */
+#demo2 {
+    font-weight: 500;
+    font-size: 50px;
+}
+
+/* Thẻ có cả id=demo2 và class = text-dark */
+#demo2.text-dark {
+    color: #111;
+}
+
+/* Độ ưu tiên của CSS */
+/* Viết sau có độ ưu tiên cao hơn viết trước */
+
+p {
+    /* 1 */
+    color: aquamarine !important;
+}
+
+.text-red {
+    /* 10 */
+    color: red;
+}
+
+#demo3.text-white {
+    /* 110 */
+    color: white;
+    width: 50%;
+}
+
+.text-xl {
+    font-size: 1.25rem;
+}
+
+/* Đơn vị trong CSS */
+
+/* Đơn vị tuyệt đối: px */
+
+/* Đơn vị tương đối: vh vw % em rem*/
+/* vh: view height */
+/* vw: view width */
+/* 100vh: 50vh */
+/* 100vw 50vw */
+
+/* Mặc định 1rem: 16px */
+/* rem: lấy giá trị theo thuộc tính font size của thẻ html */
+
+/* Box model */
+/* 5 thuộc tính của box model */
+/* 
+    width
+    height
+    margin: Khoảng cách giữa các thẻ 
+    border: đường viền thẻ
+    padding: Khoảng cách từ content(nội dung) tới đường viền (border)
+ */
+
+.box {
+    width: 100px;
+    height: 100px;
+    padding: 20px;
+    font-size: 30px;
+
+    /* margin: 30px; */
+    /* margin-top: 50px;
+    margin-right: 40px;
+    margin-bottom: 60px;
+    margin-left: 20px; */
+
+    /* Quy tắc viết gọn của margin or padding */
+    /* margin: 50px 40px 60px 20px; */
+    /* margin: 50px 40px 50px 40px; */
+
+    /* margin: 50px 40px; */
+    /* Giá trị thứ 1: top - bottom */
+    /* Giá trị thứ 2: left - right */
+
+    /* padding-top: 50px;
+    padding-right: 40px;
+    padding-bottom: 30px;
+    padding-left: 20px; */
+
+    /* padding: 50px 40px 30px 20px; */
+
+    /* padding: 40px 30px; */
+
+    /* 1px: độ dày của đường viền */
+    /* solid: Kiểu đường viền */
+    /* red: màu đường viền */
+    border: 5px solid green;
+    /* display: inline-flex; */
+    /* width: 100%; */
+
+    /* Giữ kích thước của thẻ */
+    box-sizing: border-box;
+}
+
+.box1 {
+    background-color: yellow;
+    /* margin-bottom: 140px; */
+    margin-bottom: 60px;
+}
+
+.box2 {
+    background-color: red;
+    margin-top: 80px;
+    /* margin-top: 140px; */
+}
+
+/* padding và border sẽ làm thay đổi kích thước của thẻ */
+
+/*  chồng margin */
+/* Khi margin đối đầu nhau thì lấy giá trị theo thuộc tính margin có giá trị lớn hơn */
+
+/* Flex box */
+
+.mt-xl {
+    margin-top: 50px;
+}
+
+.box3 {
+    background-color: aqua;
+}
+
+.box4 {
+    background-color: pink;
+}
+.box5 {
+    background-color: red;
+}
+.box6 {
+    background-color: blue;
+}
+.box7 {
+    background-color: gold;
+}
+
+.flex-container {
+    height: 300px;
+    display: flex;
+    /* theo trục chính */
+    /* justify-content: space-between; */
+    /* justify-content: space-around; */
+    /* justify-content: center; */
+    /* justify-content: end; */
+    /* justify-content: start; */
+
+    /* theo trục phụ */
+    /* align-items: center; */
+    /* align-items: end; */
+    /* align-items: start; */
+
+    /* flex - direction */
+    /* Thay đổi hướng của các trục */
+    /* flex-direction: row; */
+
+    /* justify-content: center; */
+    align-items: center;
+
+    /* chỉnh khoảng các giữa các flex-items */
+    gap: 30px;
+    /* row-gap: 30px; */
+    /* column-gap: 30px; */
+
+    /* nowrap: Ko xuống dòng */
+    /* wrap: Đủ chiều rộng => đẩy xuống hàng mới */
+    flex-wrap: wrap;
+}
+
+.flex-items {
+    width: 25%;
+}
+
+.parent {
+    font-size: 30px;
+    width: 500px;
+    height: 400px;
+    background-color: red;
+
+    /* position: relative => di chuyển thẻ theo bất kỳ vị trí */
+    /* Khi có left và right => ưu tiên left */
+    /* Khi có top và bottom => ưu tiên top */
+    /* top, left, right, bottom: chỉ tác dụng khi đi kèm vs position */
+
+    position: relative;
+    /* top: -100px; */
+    /* left: 300px; */
+    /* right: -600px; */
+    /* bottom: -200px; */
+}
+/* căn giữa theo position */
+/* thẻ cha: position: relative */
+/* thẻ con: position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); */
+.child {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    /* Lấy thẻ cha gần nhất có thuộc tính position để làm trục tọa độ */
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+ 

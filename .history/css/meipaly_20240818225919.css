@@ -1,0 +1,191 @@
+/* reset css */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+/* reset gạch chân mặc định của thẻ a  */
+a{
+    text-decoration: none;
+}
+html{
+    font-family: "Oswald", sans-serif;
+}
+
+.container{
+    max-width: 1200px;
+    margin: auto;
+    background: blue;
+}
+
+/* --------------Header-------------- */
+header{
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    align-items: center;
+}
+header .header-logo{
+    /* thay đổi hình dạng của con trỏ chuột */
+    cursor:pointer ;
+}
+
+/* selector chọn những thẻ có class là header-logo nằm trong thẻ header */
+header .header-logo span{
+ font-size:32px;
+ font-weight: 700;
+ color:#fff;
+ margin-left:  8px; 
+}
+
+header .header-logo i{
+    font-size:34px;
+    color: #fff;
+}
+
+header .header-nav a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    /* Xác định thuộc tính thay đổi */
+    /* transition: all; */
+
+    /* Thời gian thực hiện chuyển động thay đổi */
+    /* transition-duration: 0.3s; */
+
+    /* Hiệu ứng thay đổi */
+    /* transition-timing-function: ease-in-out; */
+
+    /* Cú pháp rút gọn */
+    transition: all 0.3s ease-in-out;
+}
+/* hover: bắt sự kiện khi rê chuột vào thẻ a */
+header .header-nav a:hover{
+color: #e62b4a;
+}
+/* C1 */
+/* header .header-nav li {
+    display: inline;
+    margin: 30px;
+} */
+
+/* C2: Sử dụng flex */
+header .header-nav ul{
+    /* bỏ đi đánh dấu của thẻ ul li */
+    list-style: none;
+    display: flex;
+    /* chỉnh khoảng cách giữa các flex items */
+    gap: 30px;
+}
+/* C1: thêm class active vào thẻ a ở file html */
+/* Seclector tới thẻ a có class active nằm trong header-nav và trong header */
+header .header-nav a.active{
+    color: #e62b4a;
+}
+
+/* C2 */
+/* Selector tới thẻ a trong thẻ con li đầu tiên của thẻ ul */
+/* nth-child():lựa chọn tới thẻ con bất kì */
+/* header .header-nav ul li:first-child{
+    color: #e62b4a;
+} */
+
+/* Banner */
+/* Căn giữa nội dụng */
+/* C1: flex box */
+#banner .banner-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+    /* Dùng hình ảnh để làm hình nền  */
+    background:url(../img/home_slider.jpg);
+    /*Tránh trường hợp lặp lại hình*/
+    background-repeat: no-repeat;
+    /* Chỉnh kích thước của hình nền */
+    /* cover:chiếm hết toàn bộ kích thước của thẻ cha */
+    /* contain: Giữ nguyên kích thước của hình*/
+    background-size: cover;
+    /* Chỉnh sửa vị trí của hình background */
+    background-position: center;
+
+    /* Cú pháp viết gọn */
+    /* background:url(../img/home_slider.jpg) no-repeat center / cover; */
+}
+
+#banner .banner-content .banner-icon{
+    color:#fff;
+    font-size: 28px;
+
+    /* Tên của animation đang muốn áp dụng vào */
+    animation-name: fadeDown;
+
+    /*  */
+    animation-timing-function: linear;
+
+
+    animation-duration: 2s;
+}
+
+/* C2:Position */
+#banner{
+    position: relative;
+}
+
+/* #banner .banner-content{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    margin-top:79px;
+    text-align: center;
+    background-color: #111;
+} */
+
+#banner .banner-content .banner-desc{
+    color: white;
+
+}
+
+#banner .banner-content .banner-title{
+    color: white;
+    font-size: 75px;
+}
+
+
+
+#banner .banner-content .banner-btn{
+    background-color: rgb(230, 43, 74);
+    padding: 14px 24px;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+    outline: none;
+    border: 2px solid transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+#banner .banner-content .banner-btn:hover{
+    /* Giá trị cuối cùng (alpha) từ 0-1 giá trị càng nhỏ thì càng đậm */
+    /* background-color: rgb(230, 43, 74); */
+    background: rgb(230, 43, 74 ,0.6);
+}
+
+/* Tạo animation */
+/* @keyframe */
+@keyframes fadeDown {
+    from{
+        /* thuộc tính của trang thái bắt đầu */
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to{
+        /* thuộc tính ở trạng thái khết thúc */
+        opacity: 0;
+        transform: translateY(50px);
+    }
+}

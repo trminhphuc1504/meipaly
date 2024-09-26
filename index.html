@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- CSS external -->
+    <!-- Liên kết file css ngoài vào file HTML -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- CSS Internal -->
+    <style>
+      /* CSS selector */
+
+      h2 {
+        /* chứa thuộc tính CSS */
+        background-color: green;
+        color: pink;
+        font-size: 40px;
+        font-weight: 800;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- CSS inline -->
+    <!-- Nhược điểm: Làm rối cấu trúc của HTML, Không tái sử dụng đc -->
+
+    <h1 style="background-color: red; color: #fff; font-size: 80px">
+      Giới thiệu về CSS
+    </h1>
+
+    <h2 style="background-color: aqua; color: #fff">Demo CSS Inline</h2>
+
+    <!-- class và id là 2 thuộc tính global (tất cả các thẻ HTML đều có 2 thuộc tính này) -->
+
+    <!-- id: Giá trị của thuộc tính id phải là duy nhất -->
+
+    <!-- class: 1 thẻ có thể có nhiều class, mỗi class cách nhau = khoảng trắng -->
+    <!-- class thì có thể trùng nhau (nhiều thẻ có thể có class giống nhau) -->
+
+    <!-- Quy tắc đặt tên class, id:  -->
+    <!-- Không bắt đầu bằng số -->
+    <!-- Phân biệt chữ hoa và chữ thường (Không nên sử dụng ký tự in hoa) -->
+
+    <h2 class="bg-green bg-yellow text-center" id="demo">Demo CSS internal</h2>
+    <h2 class="bg-yellow text-center" id="demo1">Demo CSS internal 2</h2>
+    <h2 class="bg-yellow text-center demo2 demo demo1">
+      Demo CSS Selector 2 or nhiều class
+    </h2>
+    <h4 id="demo2" class="text-dark">Demo Selector ID</h4>
+
+    <p class="text-red text-white text-xl" id="demo3">Demo ưu tiên CSS</p>
+
+    <h3>Demo CSS external</h3>
+
+    <h2>Box model</h2>
+
+    <!--div (block) -->
+    <!-- division -->
+
+    <div class="box box1">Box 1</div>
+    <div class="box box2">Box 2</div>
+
+    <!-- Flex box -->
+    <!-- thẻ cha: flex-container -->
+    <!-- Thẻ con: flex-items -->
+    <!-- Để sử dụng flex box: thẻ cha phải có thuộc tính display: flex; -->
+    <div class="mt-xl flex-container">
+      <div class="box box3 flex-items">Box 3</div>
+      <div class="box box4 flex-items">Box 4</div>
+      <div class="box box5 flex-items">Box 5</div>
+      <div class="box box6 flex-items">Box 6</div>
+      <div class="box box7 flex-items">Box 7</div>
+    </div>
+    <!-- <div style="height: 500px"></div> -->
+
+    <!-- Demo Position -->
+    <div class="parent">
+      parent
+      <div class="child">child</div>
+    </div>
+  </body>
+</html>

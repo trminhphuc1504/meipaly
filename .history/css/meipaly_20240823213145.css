@@ -1,0 +1,574 @@
+/* reset css */
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+/* reset gạch chân mặc định của thẻ a  */
+a{
+    text-decoration: none;
+}
+html{
+    font-family: "Oswald", sans-serif;
+}
+
+.container{
+    max-width: 1200px;
+    margin: auto;
+    /* background: blue; */
+}
+
+/* --------------Header-------------- */
+header{
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    align-items: center;
+}
+
+#header{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top:0;
+    border-bottom:1px solid rgba(255, 255, 255, 0.4);
+}
+
+header .header-logo{
+    /* thay đổi hình dạng của con trỏ chuột */
+    cursor:pointer ;
+}
+
+/* selector chọn những thẻ có class là header-logo nằm trong thẻ header */
+header .header-logo span{
+ font-size:32px;
+ font-weight: 700;
+ color:#fff;
+ margin-left:  8px; 
+}
+
+header .header-logo i{
+    font-size:34px;
+    color: #fff;
+}
+
+header .header-nav a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+    /* Xác định thuộc tính thay đổi */
+    /* transition: all; */
+
+    /* Thời gian thực hiện chuyển động thay đổi */
+    /* transition-duration: 0.3s; */
+
+    /* Hiệu ứng thay đổi */
+    /* transition-timing-function: ease-in-out; */
+
+    /* Cú pháp rút gọn */
+    transition: all 0.3s ease-in-out;
+}
+/* hover: bắt sự kiện khi rê chuột vào thẻ a */
+header .header-nav a:hover{
+color: #e62b4a;
+}
+/* C1 */
+/* header .header-nav li {
+    display: inline;
+    margin: 30px;
+} */
+
+/* C2: Sử dụng flex */
+header .header-nav ul{
+    /* bỏ đi đánh dấu của thẻ ul li */
+    list-style: none;
+    display: flex;
+    /* chỉnh khoảng cách giữa các flex items */
+    gap: 30px;
+}
+/* C1: thêm class active vào thẻ a ở file html */
+/* Seclector tới thẻ a có class active nằm trong header-nav và trong header */
+header .header-nav a.active{
+    color: #e62b4a;
+}
+
+/* C2 */
+/* Selector tới thẻ a trong thẻ con li đầu tiên của thẻ ul */
+/* nth-child():lựa chọn tới thẻ con bất kì */
+/* header .header-nav ul li:first-child{
+    color: #e62b4a;
+} */
+
+#banner{
+        /* Dùng hình ảnh để làm hình nền  */
+        background:url(../img/home_slider.jpg);
+        /*Tránh trường hợp lặp lại hình*/
+        background-repeat: no-repeat;
+        /* Chỉnh kích thước của hình nền */
+        /* cover:chiếm hết toàn bộ kích thước của thẻ cha */
+        /* contain: Giữ nguyên kích thước của hình*/
+        background-size: cover;
+        /* Chỉnh sửa vị trí của hình background */
+        background-position: center;
+    
+        /* Cú pháp viết gọn */
+        /* background:url(../img/home_slider.jpg) no-repeat center / cover; */
+}
+
+
+
+/* Banner */
+/* Căn giữa nội dụng */
+/* C1: flex box */
+#banner .banner-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+}
+
+#banner .banner-content .banner-icon{
+    color:#fff;
+    font-size: 28px;
+
+    /* Tên của animation đang muốn áp dụng vào */
+    animation-name: fadeDown;
+
+    /* Kiểu chuyển động của animation */
+    animation-timing-function: linear;
+
+    /* Thời gian thực hiện của animation */
+    animation-duration: 1s;
+
+    animation-fill-mode: both;
+
+    /* Thời gian chờ trước khi animation đc thực hiện */
+    animation-delay: 1s;
+
+    /* Số lần animation đc thực hiện */
+    animation-iteration-count: infinite;
+
+
+    /* Cú pháp rút gọn: */
+    /* animation:fadeDown 1s linear infinite; */
+}
+
+/* C2:Position */
+/* #banner{
+    position: relative;
+} */
+
+/* #banner .banner-content{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    margin-top:79px;
+    text-align: center;
+    background-color: #111;
+} */
+
+#banner .banner-content .banner-desc{
+    color: white;
+    font-size: 20px;
+
+}
+
+#banner .banner-content .banner-title{
+    color: white;
+    font-size: 75px;
+    max-width: 500px;
+    text-align: center;
+}
+
+
+
+#banner .banner-content .banner-btn{
+    background-color: rgb(230, 43, 74);
+    padding: 14px 24px;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+    outline: none;
+    border: 2px solid transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+#banner .banner-content .banner-btn:hover{
+    /* Giá trị cuối cùng (alpha) từ 0-1 giá trị càng nhỏ thì càng đậm */
+    /* background-color: rgb(230, 43, 74); */
+    background: rgb(230, 43, 74 ,0.6);
+}
+
+/* Tạo animation */
+/* @keyframe */
+@keyframes fadeDown {
+    from{
+        /* thuộc tính của trang thái bắt đầu */
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to{
+        /* thuộc tính ở trạng thái khết thúc */
+        opacity: 0;
+        transform: translateY(50px);
+    }
+}
+
+
+/* Carousel */
+#carousel{
+    padding: 100px 80px;
+    background-color:#111;
+}
+
+#carousel .carousel-content {
+    text-align: center;
+
+}
+
+#carousel .carousel-content .carousel-sub-title{
+    color:#e62b4a
+}
+
+#carousel .carousel-content .carousel-title{
+    font-size: 50px;
+    font-weight: 400;
+    color:#fff;
+    padding: 20px 60px;
+}
+
+#carousel .carousel-content .carousel-desc{
+    font-size: 16px;
+    font-weight: 600;
+    color: #888;
+    /* padding: 0 60px; */
+    /* Độ rộng lớn nhất 600px */
+    max-width: 600px;
+    /* Căn giữa */
+    margin: auto;
+}
+
+
+
+#carousel .carousel-slider-item{
+    padding:20px;
+    /* background-color:#fff; */
+    /* background:#fff; */
+}
+
+#carousel .carousel-slider-item .slider-content{
+    padding: 60px 30px;
+    background:#fff;
+}
+
+
+#carousel .carousel-slider-item p{
+    height: 80px;
+
+    text-transform: uppercase;
+    color:#888888;
+}
+
+#carousel .carousel-slider-item i{
+    font-size: 30px;
+    color:#888888;
+    margin-bottom:10px;
+}
+
+#carousel .carousel-slider-item .slider-content{
+    position: relative;
+}
+
+
+#carousel .carousel-slider-item .slider-content::after{
+    content:' ';
+    /* display: none => ẩn khỏi UI */
+    display: block;
+    width: 8px;
+    /* height: 0 => ẩn khỏi UI */
+    height:0%;
+    position: absolute;
+    top:0;
+    right: 0;
+    background:#e62b4a;
+    /* transition ko bắt đc sự thay đổi của thuộc tính display */
+    transition: all 0.2s linear;
+}
+
+#carousel .carousel-slider-item .slider-content:hover::after{
+    /* display: block; */
+    height: 100%;
+}
+
+
+/* ghi đè CSS thư viện slick */
+.carousel-slider .slick-dots li button{
+    background:#888;
+    border-radius: 50%;
+}
+
+.carousel-slider .slick-dots li button::before{
+    content:' ';
+}
+
+
+.carousel-slider .slick-dots li button:hover{
+    background:#fff;
+    /* làm mượt hiệu ứng */
+    transition: all 0.3s linear;
+}
+
+/* selector tới thẻ li phải có class slick-active */
+.carousel-slider .slick-dots li.slick-active button{
+    background:#e62b4a;
+}
+
+.demo-radius {
+    width: 100px;
+    height: 100px;
+    background: green;
+    border-radius: 50%;
+    /* border-radius: 10px 0 10px 0; */
+}
+
+/* before or after giúp thêm nội dung vào phía trước hoặc sau 1 thẻ html */
+
+/* Thêm trước thẻ */
+.demo-after-before::before {
+    /* content: 'Hello BC73';÷ */
+    content: attr(data-before);
+}
+
+
+/* Thêm sau thẻ */
+.demo-after-before::after {
+    content: '....Aferr....';
+}
+/* display: inline => Ko áp dụng đc 2 thuộc css là width và height */
+/* display: block => width height */
+/* inline: => Kích thước của thẻ = kích thước của nội dung mà thẻ chứa, có thêm đặc tính của block */
+
+
+/* SHOWCASE */
+
+#showcase{
+    padding:100px 0;
+}
+
+#showcase .showcase-about{
+    text-align:center;
+}
+
+.showcase-about .showcase-subtitle{
+    color:#888;
+}
+
+.showcase-about .showcase-title{
+    font-size:50px;
+    font-weight: 400;
+    text-transform:uppercase;
+    margin: 12px 0;
+}
+
+.showcase-about .showcase-desc{
+    color:#888;
+    font-weight: 400;
+    max-width: 650px;
+    margin: auto;
+}
+
+
+.showcase-content{
+    /* Đặt biến trong CSS */
+    /* Số lượng item trên 1 hàng */
+    --number-item: 3;
+    /* Khoảng cách giữa các item */
+    --gap: 20px;
+
+    display: flex;
+    /* chỉnh khoảng cách giữa các item */
+    gap: 40px;
+    gap: var(--gap);
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.showcase-content .showcase-item{
+    width: calc((100% - calc(var(--number-item) - 1) * var(--gap)) / var(--number-item)); 
+        /* Tính số lượng gap: calc(var(--number-item) - 1) */
+    /* tính kích thước 1 item: 100% - (số lượng gap * gap) / số lượng item trên 1 hàng */
+    /* moi hang la 100% muon moi hang co 3 item thi la 100-khoang trang giua 3 item%3 */
+    /* width: calc((100% - 2 * 20px) / 3); */
+}
+
+
+.showcase-content .showcase-item img{
+    width:100%;
+    filter:grayscale(100%);
+    height: 400px;
+
+    /* Khi điều chỉnh kích thước của img ko theo đúng tỉ lệ của img => object-fit: cover, object-position: center; */
+    object-fit: cover;
+    object-position: center;
+}
+
+
+.showcase-content .showcase-item {
+    position: relative;
+    height: 400px;
+}
+
+
+.showcase-content .showcase-item:hover .showcase-item-overlay{
+    /* width: 100%;
+    height: 100%; */
+    opacity: 1;
+
+
+}
+
+.showcase-content .showcase-item .showcase-item-overlay{
+    position: absolute;
+    background-color:rgba(255, 0 , 0 , 0.5 );
+    /* lớp phủ bắt đầu từ bên trái và trên */
+    left:0;
+    top:0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; 
+        /* Hiệu ứng */
+    transition: all 0.3s linear;
+    display: flex;
+    /* truc chinh la truc doc truc phu la truc ngang */
+    flex-direction: column;
+    /* justify-cotent an theo truc chinh */
+    justify-content: space-between;
+    padding: 16px;
+}
+
+.showcase-content .showcase-item .showcase-overlay-icon{
+    display:flex;
+    justify-content: end;
+}
+
+.showcase-content .showcase-item .showcase-overlay-icon i{
+    width: 40px;
+    height: 40px;
+    background:#fff;
+    /* Căn giữa icon */
+    display: flex;
+    justify-content: center;
+    align-items:center;
+
+    /*  Di chuyển vị trí xuống 40px theo trục y */
+    transform: translateY(40px);
+    transition: all 0.3s linear;
+    opacity: 0;
+    color:#111;
+}
+
+
+.showcase-content .showcase-item .showcase-overlay-icon i:hover{
+    background:#111;
+    color:#fff;
+}
+
+/* chinh hieu ung hover cho showcase-item va chinh css cua showcase-overlay-icon i */
+.showcase-content .showcase-item:hover .showcase-overlay-icon i{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+
+.showcase-content .showcase-item .showcase-overlay-logo{
+    color:#888;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+/* div:last-child là để bắt thẻ  div cuối cùng  trong showcase-item-overlay , tại vì trong thẻ div showcase-item-overlay có 2 thẻ div con bên trong và có thể dùng nth-child(stt thẻ div) cũng được nhưng do thẻ này là thẻ cuối nên dùng last-child */
+.showcase-content .showcase-item-overlay div:last-child{
+    transform: translateY(40px);
+    opacity: 0;
+    transition: all 0.3s linear;
+}
+
+.showcase-content .showcase-item:hover .showcase-item-overlay div:last-child{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.showcase-content .showcase-item .showcase-overlay-desc{
+    color:#fff;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+
+/* Blog */
+#blog .blog-about {
+    padding:80px;
+    padding-bottom: 40px;
+    background:#d9d9d9;
+
+}
+
+#blog .blog-about .blog-about-content{
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+}
+
+.blog-about .blog-about-content .blog-sub-title{
+    color:#888;
+    margin-bottom:10px;
+}
+
+.blog-about .blog-about-content .blog-title{
+    font-size:46px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.blog-about .blog-about-content .blog-desc{
+    color: #888;
+    font-weight: 600;
+
+}
+
+#blog .blog-cotent{
+    /* vào thẻ cha */
+    display: grid;
+    /* chia thành 4 cột = nhau */
+    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+    grid-template-columns:repeat(4,1fr);
+}
+
+#blog .blog-cotent .blog-item img{
+    width: 100%;
+    filter: grayscale(80%) contrast(60%);
+    display: block;
+}
+
+#blog .blog-cotent .blog-item:first-child{
+    /* gộp cột */
+    grid-column: 1 / span 2;
+    /* gộp hàng */
+    grid-row:1 / span 2;
+}
+
+#blog .blog-cotent .blog-item:last-child{
+    /* 3: số cột bắt đầu */
+    /* span 2: số cột chiếm */
+    grid-column: 3/ span 2;
+
+    /* 3: số hàng bắt đầu */
+    /* span 2: số hàng chiếm */
+    grid-row:  3/ span 2;
+}
